@@ -2,6 +2,8 @@
 
 这是一个在macbook上使用Pycharm开发的、并没有在Linux和windows上测试过的google-ip-searcher。
 
+使用python default.py来启动程序，根目录下会打出日记
+
 检测逻辑：
 
 1、先测试能否连接上目标ip的443端口，若成功进入2，若超时失败则返回。
