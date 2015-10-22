@@ -34,7 +34,7 @@ class IpTester(threading.Thread):
         try:
             connection = socket.socket()
             connection.settimeout(TIME_OUT)
-            ssl_connection = ssl.wrap_socket(connection, cert_reqs=ssl.CERT_REQUIRED, ca_certs='../cacert.pem')
+            ssl_connection = ssl.wrap_socket(connection, cert_reqs=ssl.CERT_REQUIRED, ca_certs='cacert.pem')
             ssl_connection.settimeout(TIME_OUT * 4)
             ssl_connection.connect((ip, 443))
             cert = ssl_connection.getpeercert()
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     ip = '64.233.162.81'
     if IpTester.test_simple_ip(ip):
         print 'pass one.'
-        if IpTester.test_ssl_ip(ip):
+        if IpTester.test_ssl_ip(ip)[0]:
             print 'pass two.'
             if IpTester.test_goagent_ip(ip):
                 print 'pass three'
