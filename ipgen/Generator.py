@@ -2,7 +2,6 @@
 
 import socket
 import struct
-# import iptester.IpTester
 import threading
 import random
 __author__ = 'shadowmydx'

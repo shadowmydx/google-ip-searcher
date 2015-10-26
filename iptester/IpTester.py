@@ -87,7 +87,7 @@ class IpTester(threading.Thread):
                 print response.getheader('server', '')
                 response.close()
             return True
-        except (socket.error, ssl.SSLError, OSError):
+        except:
             if ssl_sock:
                 ssl_sock.close()
             if sock:

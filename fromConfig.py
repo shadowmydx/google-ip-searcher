@@ -1,12 +1,12 @@
 # -*- coding:utf-8 -*-
 import ipgen.Generator
-import segen.Generator
 import iptester.IpTester
 import speedtester.SpeedTester
 import ipdealer.OutputStdout
 import Queue
 import threading
 import time
+import ipgen.ConfigGenerator
 __author__ = 'shadowmydx'
 
 
@@ -80,10 +80,6 @@ def write_result_to_file(result_lst):
 
 
 def wait_for_end(queues, result_lst):
-    # print 'block before..'
-    # conditions.acquire()
-    # conditions.wait()
-    # print 'block after..'
     for queue in queues:
         queue.join()
         print 'one finished.'
@@ -93,16 +89,9 @@ def wait_for_end(queues, result_lst):
 
 
 def main():
-    gen = segen.Generator.SegGenerator()
-    seg_lst = gen.get_google_seg()
     result_lst = list()
-
-    seg_lst1 = list()  # for test
-    seg_lst1.append(seg_lst[1])
-    seg_lst1.append(seg_lst[0])  # for test
-
-    ip_producer = ipgen.Generator.IpGenerator()
-    ip_producer.set_seg_list(seg_lst)
+    ip_producer = ipgen.ConfigGenerator.ConfigIpGenerator()
+    ip_producer.set_file_path('./ip_list.txt')
     ip_testers = setup_all_testers()
     ip_dealer = ipdealer.OutputStdout.SimpleOutput()
     ip_dealer.set_result_lst(result_lst)
