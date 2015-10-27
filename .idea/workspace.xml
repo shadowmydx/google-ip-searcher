@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d882f3c4-ac55-4ed1-b5ed-c5568dbcc03a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logUtil/Logger.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logUtil/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ipgen/ConfigGenerator.py" afterPath="$PROJECT_DIR$/ipgen/ConfigGenerator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segen/Generator.py" afterPath="$PROJECT_DIR$/segen/Generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iptester/IpTester.py" afterPath="$PROJECT_DIR$/iptester/IpTester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ipdealer/OutputStdout.py" afterPath="$PROJECT_DIR$/ipdealer/OutputStdout.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/default.py" afterPath="$PROJECT_DIR$/default.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fromConfig.py" afterPath="$PROJECT_DIR$/fromConfig.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="google-ip-searcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fromConfig.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fromConfig.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fromConfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7254902">
+            <state vertical-scroll-proportion="-9.592592">
               <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
               <folding>
                 <element signature="e#23#45#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21008404">
+              <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,7 +62,6 @@
       <list>
         <option value="$PROJECT_DIR$/ip_list.txt" />
         <option value="$PROJECT_DIR$/ipgen/Generator.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/logUtil/Logger.py" />
         <option value="$PROJECT_DIR$/default.py" />
         <option value="$PROJECT_DIR$/ipgen/ConfigGenerator.py" />
@@ -68,6 +69,7 @@
         <option value="$PROJECT_DIR$/segen/Generator.py" />
         <option value="$PROJECT_DIR$/ipdealer/OutputStdout.py" />
         <option value="$PROJECT_DIR$/fromConfig.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -481,14 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logUtil/Logger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6666667">
@@ -565,11 +559,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fromConfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7254902">
+        <state vertical-scroll-proportion="-9.592592">
           <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
           <folding>
             <element signature="e#23#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21008404">
+          <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
