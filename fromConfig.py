@@ -7,6 +7,7 @@ import Queue
 import threading
 import time
 import ipgen.ConfigGenerator
+from logUtil.Logger import Logger
 __author__ = 'shadowmydx'
 
 
@@ -82,8 +83,8 @@ def write_result_to_file(result_lst):
 def wait_for_end(queues, result_lst):
     for queue in queues:
         queue.join()
-        print 'one finished.'
-    print 'all task finished.'
+        Logger.log('one finished.')
+    Logger.log('all task finished.')
     result_lst.sort(cmp=lambda x, y: int(x[1] - y[1]))
     write_result_to_file(result_lst)
 
@@ -99,9 +100,9 @@ def main():
     queues = setup_all_queues(ip_producer, ip_testers, speed_testers, ip_dealer)
     boost_up(ip_testers, speed_testers, ip_dealer)
     ip_producer.run()
-    print '1st producer end ...'
+    Logger.log('1st producer end ...')
     wait_for_end(queues, result_lst)
-    print result_lst
+    Logger.log(result_lst)
 
 if __name__ == '__main__':
     main()

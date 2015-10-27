@@ -14,7 +14,6 @@ class SegGenerator:
         p = os.popen(self.cmd)
         all_seg = p.read()
         seg_list = [key.strip() for key in self.google_reg.findall(all_seg)[0].split('ip4:') if len(key.split()) != 0]
-        print seg_list
         return seg_list
 
 

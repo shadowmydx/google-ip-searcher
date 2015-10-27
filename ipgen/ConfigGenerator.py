@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*-
-
-import socket
-import struct
 import threading
-import random
+from logUtil.Logger import Logger
 __author__ = 'shadowmydx'
 
 
@@ -30,10 +27,9 @@ class ConfigIpGenerator(threading.Thread):
             try:
                 ip = next(first_ip)
                 self.producer_queue.put(ip)
-                print ip
             except StopIteration:
                 break
-        print '1st producer out.'
+        Logger.log('1st producer out.')
 
     @staticmethod
     def gen_ip_by_path(path):

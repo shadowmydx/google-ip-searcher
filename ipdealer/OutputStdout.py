@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import threading
+from logUtil.Logger import Logger
 __author__ = 'shadowmydx'
 
 
@@ -24,5 +25,5 @@ class SimpleOutput(threading.Thread):
             ip_speed = self.consumer_queue.get()
             # print 'The google ip is ' + ip_speed[0] + ', the speed is ' + ip_speed[1]
             self.add_to_result(ip_speed)
-            print 'Got one good ip: ' + ip_speed[0] + ' .'
+            Logger.log('Got one good ip: ' + ip_speed[0] + ' .')
             self.consumer_queue.task_done()

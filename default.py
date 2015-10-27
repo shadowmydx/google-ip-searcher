@@ -7,10 +7,11 @@ import ipdealer.OutputStdout
 import Queue
 import threading
 import time
+from logUtil.Logger import Logger
 __author__ = 'shadowmydx'
 
 
-configs = {'threads': 15, 'speed_counts': 5, 'speeders': 3}
+configs = {'threads': 30, 'speed_counts': 5, 'speeders': 3}
 
 
 def setup_all_speeders():
@@ -80,14 +81,10 @@ def write_result_to_file(result_lst):
 
 
 def wait_for_end(queues, result_lst):
-    # print 'block before..'
-    # conditions.acquire()
-    # conditions.wait()
-    # print 'block after..'
     for queue in queues:
         queue.join()
-        print 'one finished.'
-    print 'all task finished.'
+        Logger.log('one finished.')
+    Logger.log('all task finished.')
     result_lst.sort(cmp=lambda x, y: int(x[1] - y[1]))
     write_result_to_file(result_lst)
 
@@ -99,10 +96,9 @@ def main():
 
     seg_lst1 = list()  # for test
     seg_lst1.append(seg_lst[1])
-    seg_lst1.append(seg_lst[0])  # for test
 
     ip_producer = ipgen.Generator.IpGenerator()
-    ip_producer.set_seg_list(seg_lst)
+    ip_producer.set_seg_list(seg_lst1)
     ip_testers = setup_all_testers()
     ip_dealer = ipdealer.OutputStdout.SimpleOutput()
     ip_dealer.set_result_lst(result_lst)
@@ -110,9 +106,10 @@ def main():
     queues = setup_all_queues(ip_producer, ip_testers, speed_testers, ip_dealer)
     boost_up(ip_testers, speed_testers, ip_dealer)
     ip_producer.run()
-    print '1st producer end ...'
+    Logger.log('1st producer end ...')
     wait_for_end(queues, result_lst)
-    print result_lst
+    Logger.log(result_lst)
+    Logger.finish()
 
 if __name__ == '__main__':
     main()

@@ -4,6 +4,7 @@ import threading
 import ssl
 import struct
 import httplib
+from logUtil.Logger import Logger
 __author__ = 'shadowmydx'
 
 TIME_OUT = 6
@@ -38,10 +39,10 @@ class IpTester(threading.Thread):
             ssl_connection.settimeout(TIME_OUT * 4)
             ssl_connection.connect((ip, 443))
             cert = ssl_connection.getpeercert()
-            print cert
             flag, subject = IpTester.judge_cert(cert)
             ssl_connection.close()
             connection.close()
+            Logger.log('cert is ' + subject)
             return flag, subject
         except:
             return False, None
@@ -84,7 +85,7 @@ class IpTester(threading.Thread):
                 ssl_sock.close()
                 raise socket.timeout('timed out')
             finally:
-                print response.getheader('server', '')
+                Logger.log('Server is ' + response.getheader('server', ''))
                 response.close()
             return True
         except:
@@ -110,9 +111,9 @@ class IpTester(threading.Thread):
                     if flag:
                         self.producer_queue.put((ip, cert))
                 else:
-                    print ip + ' is a broken ip.'
+                    Logger.log(ip + ' is a broken ip.')
             else:
-                print ip + ' is a broken ip.'
+                Logger.log(ip + ' is a broken ip.')
             self.consumer_queue.task_done()
 
 if __name__ == '__main__':
