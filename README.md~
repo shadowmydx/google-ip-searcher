@@ -2,7 +2,20 @@
 
 这是一个在macbook上使用Pycharm开发的、并没有在Linux和windows上测试过的google-ip-searcher。
 
-使用python default.py来启动程序，根目录下会打出日记
+使用python default.py来启动程序，根目录下会打出寻找到的ip信息，并整理一份可以复制进Goagent的ini格式。
+
+tips: 也可以使用python fromConfig.py，ip_list是我收集的能够返回证书的全部ip地址，直接从这里找可以更快。
+
+2015/26/10：
+
+1、增加fromConfig.py入口，读取并测试以斜线分割的ip地址。
+
+2、修复一个写文件的bug
+
+2015/27/10：
+
+1、造了个线程安全的日志输出模块Logger，并将输出升级为Logger
+
 
 检测逻辑：
 

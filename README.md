@@ -16,6 +16,10 @@ tips: 也可以使用python fromConfig.py，ip_list是我收集的能够返回�
 
 1、造了个线程安全的日志输出模块Logger，并将输出升级为Logger
 
+2015/09/12
+
+1、抄来了一个ip_range, 入口是fromFile，注释了mac平台中的测速逻辑，因此可以跑在任何平台上
+
 
 检测逻辑：
 
